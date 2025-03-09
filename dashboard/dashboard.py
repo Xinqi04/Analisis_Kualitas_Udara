@@ -3,14 +3,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Load data
 @st.cache_data
 def load_data():
     data = pd.read_csv('all_data.csv')
     data['date'] = pd.to_datetime(data['date'])
     return data
 
-data = load_data()
+df = load_data()
 
 # Sidebar untuk filter
 st.sidebar.header("Filter Data")
