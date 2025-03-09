@@ -6,11 +6,11 @@ import seaborn as sns
 # Load data
 @st.cache_data
 def load_data():
-    df = pd.read_csv("all_data.csv")  # Ganti dengan dataset yang sesuai
-    df['date'] = pd.to_datetime(df[['year', 'month', 'day']])
-    return df
+    data = pd.read_csv('all_data.csv')
+    data['date'] = pd.to_datetime(data['date'])
+    return data
 
-df = load_data()
+data = load_data()
 
 # Sidebar untuk filter
 st.sidebar.header("Filter Data")
